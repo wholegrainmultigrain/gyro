@@ -25,7 +25,7 @@
         rotateX(0.01 * x);
         rotateY(0.01 * y);
         rotateZ(0.01 * z);
-        camera(-x *10, y * 10, -z * 10);
+        camera(-x * 100, y * 100, -z * 100);
         /*rotateX(frameCount * 0.01 * x);
         rotateY(frameCount * 0.01 * y);
         rotateZ(frameCount * 0.01 * z);*/
@@ -49,9 +49,9 @@
     }
 
     function handleAcceleration() {
-        x = accelerationX/10;
-        y = accelerationY/10;
-        z = accelerationZ/10;
+        x = accelerationX/100;
+        y = accelerationY/100;
+        z = accelerationZ/100;
     }
 
 
