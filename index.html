@@ -34,8 +34,8 @@
         //pointLight(0, 255, 255);
         //ambientLight(115, 20, 180); //even red light across our objects
 
-        dirY = (mouseY / height - 0.5) * 2;
-        dirX = (mouseX / width - 0.5) * 2;
+        dirY = (y / height - 0.5) * 2;
+        dirX = (x / width - 0.5) * 2;
         directionalLight(115, 20, 180, dirX, -dirY, 0.25);
         ambientMaterial(250);
 
@@ -49,9 +49,9 @@
     }
 
     function handleAcceleration() {
-        x = accelerationX/100;
-        y = accelerationY/100;
-        z = accelerationZ/100;
+        x = accelerationX/10;
+        y = accelerationY/10;
+        z = accelerationZ/10;
     }
 
 
