@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+    </script>
+  <style> body {padding: 0; margin: 0;} </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+
+    var x, y, z, dirX, dirY;
+
+
+    function setup() {
+        createCanvas(750, 1334, WEBGL);
+        print("setup function!");
+    }
+
+    function draw() {
+        background(0);
+        handleAcceleration();
+        /*rotateX(0.01 * x);
+        rotateY(0.01 * y);
+        rotateZ(0.01 * z);*/
+        camera(-x * 100, y * 100, -z * 100);
+        rotateX(frameCount * 0.005 * x);
+        rotateY(frameCount * 0.005 * y);
+        rotateZ(frameCount * 0.005 * z);
+        ambientLight(100, 10, 180);
+        rotateZ(frameCount*0.01);
+        //pointLight(0, 255, 255);
+        //ambientLight(115, 20, 180); //even red light across our objects
+
+        dirY = (y / height - 0.5) * 2;
+        dirX = (x / width - 0.5) * 2;
+        directionalLight(115, 20, 180, dirX, -dirY, 0.25);
+        ambientMaterial(250);
+
+        torus(30, 7);
+        torus(60, 7);
+        torus(90, 7);
+        torus(120, 7);
+        //sphere(30);
+
+        console.log("draw function");
+    }
+
+    function handleAcceleration() {
+        x = accelerationX/10;
+        y = accelerationY/10;
+        z = accelerationZ/10;
+    }
+
+
+</script>
+  </body>
+</html>
