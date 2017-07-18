@@ -22,13 +22,13 @@
     function draw() {
         background(0);
         handleAcceleration();
-        rotateX(0.01 * x);
+        /*rotateX(0.01 * x);
         rotateY(0.01 * y);
         rotateZ(0.01 * z);
-        camera(-x * 100, y * 100, -z * 100);
-        /*rotateX(frameCount * 0.01 * x);
-        rotateY(frameCount * 0.01 * y);
-        rotateZ(frameCount * 0.01 * z);*/
+        camera(-x * 100, y * 100, -z * 100);*/
+        rotateX(frameCount * 0.005 * x);
+        rotateY(frameCount * 0.005 * y);
+        rotateZ(frameCount * 0.005 * z);
         ambientLight(100, 10, 180);
         rotateZ(frameCount*0.01);
         //pointLight(0, 255, 255);
