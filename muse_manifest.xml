@@ -1,0 +1,36 @@
+<manifest alg="2" build="2017.0.2.363" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="aumothra.dance" resolutions="1x" timestamp="1500341903528">
+  <folder name="css">
+    <file name="site_global.css" crc="443350757"/>
+    <file name="index.css" crc="3807637523" ref="index"/>
+    <file name="nomq_index.css" crc="4036035939" ref="index"/>
+  </folder>
+  <folder name="assets">
+    <file name="untitled-1-audio.mp3" crc="4166548792" seo="true" mt="1500159706000"/>
+    <file name="untitled-2-audio.mp3" crc="4185014587" seo="true" mt="1500159741000"/>
+    <file name="untitled-3-kit-core-coral.mp3" crc="443090833" seo="true" mt="1500159747000"/>
+    <file name="untitled-4-kit-core-coral.mp3" crc="3983181468" seo="true" mt="1500159754000"/>
+    <file name="untitled-5-kit-core-coral.mp3" crc="451647477" seo="true" mt="1500159760000"/>
+    <file name="untitled-6-audio.mp3" crc="47857159" seo="true" mt="1500159767000"/>
+    <file name="untitled-7-audio.mp3" crc="377772138" seo="true" mt="1500159774000"/>
+    <file name="untitled-9-audio.mp3" crc="3936112938" seo="true" mt="1500159780000"/>
+    <file name="untitled-11-audio.mp3" crc="4060933903" seo="true" mt="1500159713000"/>
+    <file name="untitled-12-audio.mp3" crc="206868718" seo="true" mt="1500159720000"/>
+    <file name="untitled-13-audio.mp3" crc="326471758" seo="true" mt="1500159727000"/>
+    <file name="untitled-14-audio.mp3" crc="3999782597" seo="true" mt="1500159734000"/>
+    <file name="untitled-a-reverb.mp3" crc="232203419" seo="true" mt="1500159787000"/>
+    <file name="untitled-b-delay.mp3" crc="4055588186" seo="true" mt="1500159794000"/>
+    <file name="untitled-massive-1.mp3" crc="3865108662" seo="true" mt="1500159801000"/>
+    <file name="untitled-massive.mp3" crc="4182468013" seo="true" mt="1500159808000"/>
+    <file name="untitled.mp3" crc="42232483" seo="true" mt="1500159814000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="4232573551" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="4152223963" ref="index"/>
+    <file name="jquery.watch.js" crc="3844535323" ref="index"/>
+    <file name="jquery.museresponsive.js" crc="433634197" ref="index"/>
+    <file name="require.js" crc="4234670167" ref="index"/>
+  </folder>
+  <file name="index.html" crc="476312655" seo="true" mt="1500161881804" redirect="true"/>
+</manifest>
