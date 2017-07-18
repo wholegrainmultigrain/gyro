@@ -22,11 +22,15 @@
     function draw() {
         background(0);
         handleAcceleration();
-        rotateX(frameCount * 0.01 * x);
+        rotateX(0.01 * x);
+        rotateY(0.01 * y);
+        rotateZ(0.01 * z);
+        camera(-x *10, y * 10, -z * 10);
+        /*rotateX(frameCount * 0.01 * x);
         rotateY(frameCount * 0.01 * y);
-        rotateZ(frameCount * 0.01 * z);
+        rotateZ(frameCount * 0.01 * z);*/
         ambientLight(100, 10, 180);
-        //rotateZ(frameCount*0.01);
+        rotateZ(frameCount*0.01);
         //pointLight(0, 255, 255);
         //ambientLight(115, 20, 180); //even red light across our objects
 
@@ -47,7 +51,7 @@
     function handleAcceleration() {
         x = accelerationX/10;
         y = accelerationY/10;
-        z = accelerationZ/20;
+        z = accelerationZ/10;
     }
 
 
