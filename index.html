@@ -4,36 +4,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
-    <script src="bower_components/gyronorm/dist/gyronorm.complete.min.js"></script>
+    </script>
   <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
     <script type="text/javascript">
 
 
-    var gn = new GyroNorm();
-      gn.init().then(ongnReady);
-      var ongnReady = function(){
-	       gn.start(function(){
-		// Process return values here
-	});
-}
-
-// At this point callback function returns do.alpha values relative to the initial position of the device
-
-    gn.setHeadDirection();
-
-// At this point callback function starts to return do.alpha values relative to the position of the device when the above line is called
-
-    var args = {
-	frequency:50,					// ( How often the object sends the values - milliseconds )
-	gravityNormalized:true,			// ( If the gravity related values to be normalized )
-	orientationBase:GyroNorm.GAME,		// ( Can be GyroNorm.GAME or GyroNorm.WORLD. gn.GAME returns orientation values with respect to the head direction of the device. gn.WORLD returns the orientation values with respect to the actual north direction of the world. )
-	decimalCount:2,					// ( How many digits after the decimal point will there be in the return values )
-	logger:null,					// ( Function to be called to log messages from gyronorm.js )
-	screenAdjusted:false			// ( If set to true it will return screen adjusted values. )
-    };
-
+    var x, y, z, dirX, dirY;
 
 
     function setup() {
@@ -43,15 +21,17 @@
 
     function draw() {
         background(0);
-        rotateX(frameCount * 0.01 * GyroNorm.GAME);
-        rotateY(frameCount * 0.01);
+        handleAcceleration();
+        rotateX(frameCount * 0.01 * x);
+        rotateY(frameCount * 0.01 * y);
+        rotateZ(frameCount * 0.01 * z);
         ambientLight(100, 10, 180);
         //rotateZ(frameCount*0.01);
         //pointLight(0, 255, 255);
         //ambientLight(115, 20, 180); //even red light across our objects
 
-        var dirY = (mouseY / height - 0.5) * 2;
-        var dirX = (mouseX / width - 0.5) * 2;
+        dirY = (mouseY / height - 0.5) * 2;
+        dirX = (mouseX / width - 0.5) * 2;
         directionalLight(115, 20, 180, dirX, -dirY, 0.25);
         ambientMaterial(250);
 
@@ -62,9 +42,14 @@
         //sphere(30);
 
         console.log("draw function");
-        gn.stop();
-
     }
+
+    function handleAcceleration() {
+        x = accelerationX/10;
+        y = accelerationY/10;
+        z = accelerationZ/20;
+    }
+
 
 </script>
   </body>
