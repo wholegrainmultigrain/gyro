@@ -5,13 +5,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
     </script>
-  <style> body {padding: 0; margin: 0;} </style>
+  <style> body {
+    padding: 0; 
+    margin: 0;
+    }
+  </style>
   </head>
   <body>
     <script type="text/javascript">
 
 
-    var x, y, z, dirX, dirY;
+    var x, y, z, dirX, dirY, accelerationLog;
     var r = 0
     var b = 255
 
@@ -19,6 +23,8 @@
 
     function setup() {
         createCanvas(750, 1334, WEBGL);
+        handleAcceleration();
+        createSpan(accelerationLog);
         print("setup function!");
     }
 
@@ -59,7 +65,10 @@
         x = accelerationX/10;
         y = accelerationY/10;
         z = accelerationZ/10;
+        accelerationLog = "x:"+x+" y:"+y+" z:"+z;
+        console.log(accelerationLog);
     }
+
 
 
 </script>
