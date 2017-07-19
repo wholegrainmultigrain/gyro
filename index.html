@@ -25,8 +25,8 @@
     function draw() {
         //background(0);
         handleAcceleration();
-        r = map(dirX, 0, displayWidth, 0, 255);
-        b = map(dirY, 0, displayHeight, 0, 255);
+        r = map(x, 0, displayWidth, 0, 255);
+        b = map(y, 0, displayHeight, 0, 255);
         background(r, 0, b);
         /*rotateX(0.01 * x);
         rotateY(0.01 * y);
@@ -59,9 +59,6 @@
         x = accelerationX/10;
         y = accelerationY/10;
         z = accelerationZ/10;
-        console.log(x);
-        console.log(y);
-        console.log(z);
     }
 
 
