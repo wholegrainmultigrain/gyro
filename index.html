@@ -16,31 +16,26 @@
 
 
     var x, y, z, dirX, dirY, accelerationLog;
-    var r = 0
-    var b = 255
+    var r = 0;
+    var b = 255;
 
 
 
     function setup() {
         createCanvas(750, 1334, WEBGL);
-        handleAcceleration();
-        createSpan(accelerationLog);
         print("setup function!");
     }
 
     function draw() {
         //background(0);
         handleAcceleration();
-        r = map(x, 0, 750, 0, 255);
-        b = map(y, 0, 1334, 0, 255);
+        r = map(x, 0, 10, 0, 255);
+        b = map(y, 0, 10, 0, 255);
         background(r, 0, b);
-        /*rotateX(0.01 * x);
-        rotateY(0.01 * y);
-        rotateZ(0.01 * z);*/
         camera(-x * 100, y * 100, -z * 100 );
-        rotateX((frameCount % PI) * .2 * x);
-        rotateY((frameCount % PI) * .2 * y);
-        rotateZ((frameCount % PI) * .2 * z);
+        rotateX((frameCount % TWO_PI) * .2 * x);
+        rotateY((frameCount % TWO_PI) * .2 * y);
+        rotateZ((frameCount % TWO_PI) * .2 * z);
         ambientLight(100, 10, 180);
         rotateZ(frameCount*0.01);
         //pointLight(0, 255, 255);
@@ -55,7 +50,6 @@
         torus(60, 7);
         torus(90, 7);
         torus(120, 7);
-        //sphere(30);
 
         console.log("draw function");
     }
