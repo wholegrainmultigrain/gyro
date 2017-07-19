@@ -26,9 +26,9 @@
         rotateY(0.01 * y);
         rotateZ(0.01 * z);*/
         camera(-x * 100, y * 100, -z * 100 );
-        rotateX((frameCount % Math.PI) * .5 * x);
-        rotateY((frameCount % Math.PI) * .5 * y);
-        rotateZ((frameCount % Math.PI) * .5 * z);
+        rotateX((frameCount % Math.PI) * .2 * x);
+        rotateY((frameCount % Math.PI) * .2 * y);
+        rotateZ((frameCount % Math.PI) * .2 * z);
         ambientLight(100, 10, 180);
         rotateZ(frameCount*0.01);
         //pointLight(0, 255, 255);
