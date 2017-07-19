@@ -12,6 +12,9 @@
 
 
     var x, y, z, dirX, dirY;
+    var r = 0
+    var b = 255
+
 
 
     function setup() {
@@ -20,8 +23,11 @@
     }
 
     function draw() {
-        background(0);
+        //background(0);
         handleAcceleration();
+        r = map(dirX, 0, displayWidth, 0, 255);
+        b = map(dirY, 0, displayHeight, 0, 255);
+        background(r, 0, b);
         /*rotateX(0.01 * x);
         rotateY(0.01 * y);
         rotateZ(0.01 * z);*/
