@@ -1,70 +1,174 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
-    </script>
-  <style> body {
-    padding: 0; 
-    margin: 0;
-    }
-  </style>
-  </head>
-  <body>
-    <script type="text/javascript">
+<head>
+<title>#1 - Cell</title>
+
+<!--  jQuery -->
+<script src='js/jquery.js'></script>
+
+<style>
+
+body {background-color:#000;}
+
+.fader { display: inline-block; }
+.fader img:last-child {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    display: none;
+}
+
+    #dagger {
+		position: absolute;
+		top: 500px;
+		left: 950px;
+		z-index: 12;
+		}
+		
+	#potion {
+		position: absolute;
+		top: 466px;
+		left: 355px;
+		z-index: 12;
+		}
+	
+	#paris {
+		position: absolute;
+		top: 156px;
+		left: 153px;
+		z-index: 12;
+		}
+		
+	#room {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		z-index: 10;
+		}
+		
+	#sky {
+		position: absolute;
+		top: 100px;
+		left: 400px;
+		z-index: 5;
+		}
+
+</style>
 
 
-    var x, y, z, dirX, dirY, accelerationLog;
-    var r = 0;
-    var b = 255;
+<script type="text/javascript">
+jQuery(function(){
+	$('.fader').hover(function() {
+  	  $(this).find("img").fadeToggle();
+	});
+});
+</script>
 
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39480591-1']);
+  _gaq.push(['_trackPageview']);
 
-    function setup() {
-        createCanvas(750, 1334, WEBGL);
-        print("setup function!");
-    }
-
-    function draw() {
-        //background(0);
-        handleAcceleration();
-        r = map(x, 0, 10, 0, 255);
-        b = map(y, 0, 10, 0, 255);
-        background(r, 0, b);
-        camera(-x * 100, y * 100, -z * 100 );
-        rotateX((frameCount % TWO_PI) * .2 * x);
-        rotateY((frameCount % TWO_PI) * .2 * y);
-        rotateZ((frameCount % TWO_PI) * .2 * z);
-        ambientLight(100, 10, 180);
-        rotateZ(frameCount*0.01);
-        //pointLight(0, 255, 255);
-        //ambientLight(115, 20, 180); //even red light across our objects
-
-        dirY = (y / height - 0.5) * 2;
-        dirX = (x / width - 0.5) * 2;
-        directionalLight(115, 20, 180, dirX, -dirY, 0.25);
-        ambientMaterial(250);
-
-        torus(30, 7);
-        torus(60, 7);
-        torus(90, 7);
-        torus(120, 7);
-
-        console.log("draw function");
-    }
-
-
-    function handleAcceleration() {
-        x = accelerationX/10;
-        y = accelerationY/10;
-        z = accelerationZ/10;
-        accelerationLog = "x:"+x+" y:"+y+" z:"+z;
-        console.log(accelerationLog);
-    }
-
-
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
 </script>
-  </body>
+
+<script type="text/javascript">
+jQuery(function(){
+
+var woo = $('#audio_player1');
+var tyb2 = $('#audio_player2');
+var clarbit = $('#audio_player3');
+
+$("#paris").hover(function() {
+  woo.get(0).play();
+});
+
+$("#dagger").hover(function() {
+  tyb2.get(0).play();
+});
+
+$("#potion").hover(function() {
+  clarbit.get(0).play();
+});
+
+
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div id="room">
+    <img src="images/jscene1/room.png" />
+</div>
+
+
+<div class="fader">
+	<div id="dagger">
+    <img src="images/jscene1/dagger.png" />
+    <img src="images/jscene1/dagger-glow.png" />
+    </div>
+</div>
+
+<div class="fader">
+	<div id="potion">
+	<a href="jscene2.html">
+    <img src="images/jscene1/potion.png" />
+    <img src="images/jscene1/potion-glow.png" />
+    </a>
+    </div>
+</div>
+
+<div class="fader">
+	<div id="paris">
+    <img src="images/jscene1/paris.png" />
+    <img src="images/jscene1/paris-glow.png" />
+    </div>
+</div>
+
+<div id="sky">
+<video width="260" height="460" autoplay="autoplay" loop="loop">
+  <source src="videos/jsky.mp4" type="video/mp4">
+  <source src="videos/jsky.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+</div>
+
+<audio
+	src="sounds/ogg/woo.ogg"
+ 	id="audio_player1"
+	type="audio/ogg; codecs=vorbis">
+		<b>Your browser does not support the <code>audio</code> element.</b>
+</audio>
+
+<audio
+	src="sounds/ogg/tyb2.ogg"
+ 	id="audio_player2"
+	type="audio/ogg; codecs=vorbis">
+		<b>Your browser does not support the <code>audio</code> element.</b>
+</audio>
+
+<audio
+	src="sounds/ogg/clarbit.ogg"
+ 	id="audio_player3"
+	type="audio/ogg; codecs=vorbis">
+		<b>Your browser does not support the <code>audio</code> element.</b>
+</audio>
+
+
+
+
+</body>
+
+
 </html>
