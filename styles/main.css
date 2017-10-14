@@ -1,0 +1,66 @@
+.sidebar {
+    font-family: 'nimbus_sans_lregular', monospace;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+    position: fixed;
+    top:0px;
+    left:0px;
+    height: 100%;
+    padding: 35px 35px 100px 35px;
+}
+
+.home_body {
+    padding: 30px 35px 0px 200px;
+}
+
+.portfolio_body {
+    padding: 30px 35px 0px 200px;
+    font-family: 'nimbus_sans_lregular', monospace;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.resume_body {
+    padding: 0px 0px 0px 200px;
+
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: #F3F2F2;
+}
+
+img.home {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+img.portfolio {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+img.resume {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+div {
+	background: #fff;
+}
