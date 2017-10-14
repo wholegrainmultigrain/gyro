@@ -48,7 +48,7 @@ img.home {
 }
 
 img.portfolio {
-    max-width: 70%;
+    max-width: 720px;
     height: auto;
     display: block;
     margin: 0 auto;
