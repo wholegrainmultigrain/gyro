@@ -36,8 +36,12 @@ a:link, a:visited, a:active {
     color: black;
 }
 
-a:hover {
+a.sb:hover {
     background-color: #F3F2F2;
+}
+
+a.pf:hover {
+    text-decoration: underline;
 }
 
 img.home {
@@ -50,7 +54,6 @@ img.home {
 img.portfolio {
     max-width: 720px;
     height: auto;
-    display: block;
     margin: 0 auto;
 }
 
